@@ -27,13 +27,16 @@ const useGetImages = () => {
       }
     })
       .then (data => data.json())
-      .then(data => console.log(data.photos));
+      // promise setImages state
+      .then(data => setImages(data.photos));
   };
 
   // hook runs once on page load
   useEffect(() => {
     fetchPics();
   }, []);
+
+  return images;
 
 };
 
