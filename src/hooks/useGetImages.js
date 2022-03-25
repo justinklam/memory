@@ -1,3 +1,5 @@
+import { useEffect } from "react";
+
 const BASE_URL = 'https://api.pexels.com/v1/search';
 
 const getRandomPage = () => Math.round(Math.random() * (10-1) +1);
@@ -16,11 +18,14 @@ const useGetImages = () => {
     return url;
   };
 
-  fetch(buildURL(), {
-    headers: {
-      Authorization: process.env.REACT_APP_AUTH_KEY,
-    }
-  });
+  const fetchPics = () => {
+    fetch(buildURL(), {
+      headers: {
+        Authorization: process.env.REACT_APP_AUTH_KEY,
+      }
+    });
+  };
+  
 };
 
 export default useGetImages;
