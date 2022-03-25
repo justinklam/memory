@@ -23,9 +23,12 @@ const useGetImages = () => {
       headers: {
         Authorization: process.env.REACT_APP_AUTH_KEY,
       }
-    });
+    })
+      .then (data => data.json())
+      .then(data => console.log(data));
   };
 
+  // hook runs once on page load
   useEffect(() => {
     fetchPics();
   }, []);
