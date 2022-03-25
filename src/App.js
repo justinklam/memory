@@ -1,5 +1,7 @@
 import Background from './components/Background';
 
+const getRandomPage = () => Math.round(Math.random() * (10-1) +1);
+
 function App() {
   const buildURL = () => {
     let url = new URL ('https://api.pexels.com/v1/search');
@@ -9,6 +11,7 @@ function App() {
       orientation: 'square',
       size: 'small',
       per_page: 2,
+      page: getRandomPage()
     });
     return url;
   };
