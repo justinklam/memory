@@ -1,7 +1,5 @@
 import { useEffect, useState } from "react";
 
-// const BASE_URL = 'https://api.pexels.com/v1/search';
-
 const getRandomPage = () => Math.round(Math.random() * (10-1) +1);
 
 const useGetImages = () => {
