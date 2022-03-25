@@ -25,7 +25,11 @@ const useGetImages = () => {
       }
     });
   };
-  
+
+  useEffect(() => {
+    fetchPics();
+  }, []);
+
 };
 
 export default useGetImages;
