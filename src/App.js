@@ -1,17 +1,19 @@
 import Background from './components/Background';
 
-const BASE_URL = 'https://api.pexels.com/v1/search?query=nature&orientation=square';
-
 function App() {
   const buildURL = () => {
     let url = new URL ('https://api.pexels.com/v1/search');
     // adds the baseURL
     url.search = new URLSearchParams({
       query: 'nature',
+      orientation: 'square',
+      size: 'small',
+      per_page: 2,
     });
+    return url;
   };
 
-  fetch(BASE_URL, {
+  fetch(buildURL(), {
     headers: {
       Authorization: process.env.REACT_APP_AUTH_KEY,
     }
