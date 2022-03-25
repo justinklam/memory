@@ -1,10 +1,12 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
-const BASE_URL = 'https://api.pexels.com/v1/search';
+// const BASE_URL = 'https://api.pexels.com/v1/search';
 
 const getRandomPage = () => Math.round(Math.random() * (10-1) +1);
 
 const useGetImages = () => {
+  const [images, setImages] = useState([]);
+
   const buildURL = () => {
     let url = new URL ('https://api.pexels.com/v1/search');
     // adds the baseURL
@@ -25,7 +27,7 @@ const useGetImages = () => {
       }
     })
       .then (data => data.json())
-      .then(data => console.log(data));
+      .then(data => console.log(data.photos));
   };
 
   // hook runs once on page load
