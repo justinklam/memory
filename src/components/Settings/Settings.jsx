@@ -20,6 +20,7 @@ const Settings = () => {
                 key={item} 
                 name={item} 
                 selectedItem={category}
+                onChange = {(e) => setCategory(e.target.value)}
               />
             })}
           </div>
