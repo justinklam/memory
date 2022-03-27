@@ -2,12 +2,12 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
 import { CATEGORIES } from './../../constant';
-import RadioBox from '../RadioBox/RadioBox.jsx';
 
 import styles from './Settings.module.css';
+import RadioBox from '../RadioBox/RadioBox.jsx';
 
 const Settings = () => {
-  const [category, useCategory] = useState(CATEGORIES[0]);
+  const [category, setCategory] = useState(CATEGORIES[0]);
 
     return (
         <div className={`${styles.settings} frosted`}>
@@ -18,7 +18,8 @@ const Settings = () => {
             {CATEGORIES.map(item => {
               <RadioBox 
                 key={item} 
-                name={item}
+                name={item} 
+                selectedItem={category}
               />
             })}
           </div>
