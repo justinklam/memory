@@ -5,7 +5,7 @@ import useGetImages from './hooks/useGetImages';
 
 function App() {
   const images = useGetImages();
-  console.log({images});
+  // console.log({images});
 
   return (
     <>
