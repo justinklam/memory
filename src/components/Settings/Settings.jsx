@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
-import { CATEGORIES, PACE } from './../../constant';
+import { CATEGORIES, PACE, INITIAL_CARDS_COUNT } from './../../constant';
 
 import RadioBox from '../RadioBox/RadioBox.jsx';
 import Counter from '../Counter/Counter';
@@ -11,6 +11,7 @@ import styles from './Settings.module.css';
 const Settings = () => {
   const [category, setCategory] = useState(CATEGORIES[0]);
   const [pace, setPace] = useState(PACE[0]);
+  const [cardsCount, setCardsCount] = useState(INITIAL_CARDS_COUNT[0]);
 
     return (
         <div className={`${styles.settings} frosted`}>
