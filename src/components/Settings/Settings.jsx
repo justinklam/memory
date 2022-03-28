@@ -31,7 +31,7 @@ const Settings = () => {
 
           <h4>Amount of cards:</h4>
           <div className={`${styles.setting}`}>
-            <Counter cardsCount={cardsCount}/>
+            <Counter cardsCount={cardsCount} onClick={setCardsCount}/>
           </div>
 
           <h4>Pace:</h4>

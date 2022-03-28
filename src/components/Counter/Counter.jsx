@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import './Counter.css';
 
-const Counter = ({cardsCount}) => {
+const Counter = ({cardsCount, onClick}) => {
 
   const onDecrement = (e) => {
     e.preventDefault();
