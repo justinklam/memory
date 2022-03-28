@@ -8,9 +8,6 @@ import RadioBox from '../RadioBox/RadioBox.jsx';
 
 const Settings = () => {
   const [category, setCategory] = useState(CATEGORIES[0]);
-  console.log('CATEGORIES', CATEGORIES);
-  console.log('category', category);
-
 
     return (
         <div className={`${styles.settings} frosted`}>
