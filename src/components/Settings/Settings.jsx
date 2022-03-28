@@ -11,7 +11,7 @@ import styles from './Settings.module.css';
 const Settings = () => {
   const [category, setCategory] = useState(CATEGORIES[0]);
   const [pace, setPace] = useState(PACE[0]);
-  const [cardsCount, setCardsCount] = useState(INITIAL_CARDS_COUNT[0]);
+  const [cardsCount, setCardsCount] = useState(INITIAL_CARDS_COUNT);
 
     return (
         <div className={`${styles.settings} frosted`}>
@@ -31,7 +31,7 @@ const Settings = () => {
 
           <h4>Amount of cards:</h4>
           <div className={`${styles.setting}`}>
-            <Counter/>
+            <Counter cardsCount={cardsCount}/>
           </div>
 
           <h4>Pace:</h4>
