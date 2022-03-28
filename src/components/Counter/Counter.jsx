@@ -4,11 +4,23 @@ import PropTypes from 'prop-types';
 import './Counter.css';
 
 const Counter = ({cardsCount}) => {
+
+  const onDecrement = (e) => {
+    e.preventDefault();
+
+  };
+
+  const onIncrement = (e) => {
+    e.preventDefault();
+
+  };
+
+
     return (
       <div className="quantity">
-        <button className="minus">-</button>
+        <button className="minus" onClick={onDecrement}>-</button>
         <span className="quantity">{cardsCount}</span>
-        <button className="plus">+</button>
+        <button className="plus" onClick={onIncrement}>+</button>
       </div>
       
     )
