@@ -8,6 +8,9 @@ import RadioBox from '../RadioBox/RadioBox.jsx';
 
 const Settings = () => {
   const [category, setCategory] = useState(CATEGORIES[0]);
+  console.log('CATEGORIES', CATEGORIES);
+  console.log('category', category);
+
 
     return (
         <div className={`${styles.settings} frosted`}>
@@ -15,14 +18,14 @@ const Settings = () => {
 
           <h4>Category:</h4>
           <div className={`${styles.setting}`}>
-            {CATEGORIES.map(item => {
+            {CATEGORIES.map(item => (
               <RadioBox 
                 key={item} 
                 name={item} 
                 selectedItem={category}
                 onChange = {(e) => setCategory(e.target.value)}
               />
-            })}
+            ))}
           </div>
         </div>
     );
