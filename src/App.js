@@ -1,3 +1,5 @@
+import { useState } from 'react';
+
 // components
 import Background from './components/Background';
 import Settings from './components/Settings';
@@ -6,10 +8,13 @@ import Settings from './components/Settings';
 import useGetImages from './hooks/useGetImages';
 
 function App() {
-  const images = useGetImages();
+  const [gameOptions, setGameOptions] = useState(null);
+
+  const images = useGetImages(gameOptions);
   // console.log({images});
 
   const startGame = (options) => {
+    setGameOptions(options);
     console.log({options});
   };
 
