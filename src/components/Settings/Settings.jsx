@@ -17,7 +17,7 @@ const Settings = ({startGame}) => {
   const [cardsCount, setCardsCount] = useState(INITIAL_CARDS_COUNT);
 
   const onStartClick = () => {
-    startGame(category, pace, cardsCount);
+    startGame({category, pace, cardsCount});
   };
 
     return (
