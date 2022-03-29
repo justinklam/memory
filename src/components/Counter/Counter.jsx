@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+// styles
 import './Counter.css';
 
 const STEP = 2;
@@ -19,7 +20,6 @@ const Counter = ({cardsCount, onClick}) => {
     if (number >= 2) onClick(number);
   };
 
-
     return (
       <div className="quantity">
         <button className="minus" onClick={onDecrement}>-</button>
@@ -28,6 +28,11 @@ const Counter = ({cardsCount, onClick}) => {
       </div>
       
     )
+};
+
+Counter.propTypes = {
+  cardsCount: PropTypes.number.isRequired,
+  onClick: PropTypes.func.isRequired,
 };
 
 export default Counter;

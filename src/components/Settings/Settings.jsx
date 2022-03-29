@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
+// variables
 import { CATEGORIES, PACE, INITIAL_CARDS_COUNT } from './../../constant';
 
+// components
 import RadioBox from '../RadioBox/RadioBox.jsx';
 import Counter from '../Counter/Counter';
 
+// styles
 import styles from './Settings.module.css';
 
 const Settings = () => {
