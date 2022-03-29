@@ -9,10 +9,10 @@ const useGetImages = (gameOptions) => {
     let url = new URL ('https://api.pexels.com/v1/search');
     // adds the baseURL
     url.search = new URLSearchParams({
-      query: 'nature',
+      query: gameOptions.category,
       orientation: 'square',
       size: 'small',
-      per_page: 2,
+      per_page: gameOptions.cardsCount / 2,
       page: getRandomPage()
     });
     return url;

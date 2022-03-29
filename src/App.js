@@ -11,7 +11,7 @@ function App() {
   const [gameOptions, setGameOptions] = useState(null);
 
   const images = useGetImages(gameOptions);
-  // console.log({images});
+  console.log({images});
 
   const startGame = (options) => {
     setGameOptions(options);
