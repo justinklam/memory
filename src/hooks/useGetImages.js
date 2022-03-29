@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 const getRandomPage = () => Math.round(Math.random() * (10-1) +1);
 
-const useGetImages = () => {
+const useGetImages = (gameOptions) => {
   const [images, setImages] = useState([]);
 
   const buildURL = () => {
@@ -31,8 +31,9 @@ const useGetImages = () => {
 
   // hook runs once on page load
   useEffect(() => {
+    if (!gameOptions) return;
     fetchPics();
-  }, []);
+  }, [gameOptions]);
 
   return images;
 
