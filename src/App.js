@@ -2,6 +2,7 @@ import { useState } from 'react';
 
 // components
 import Background from './components/Background';
+import Board from  './components/Board';
 import Settings from './components/Settings';
 
 // hook
@@ -23,6 +24,7 @@ function App() {
       <Background />
         <h1>Memory Game</h1>
       <Settings startGame={startGame}/>
+      {images.length > 0 && <Board />}
     </>
   );
 };
