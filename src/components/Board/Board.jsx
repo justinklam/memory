@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 
+import Loader from './../Loader';
+
 // hook
 import useGetImages from '../../hooks/useGetImages';
 
@@ -18,7 +20,7 @@ const Board = ({gameOptions}) => {
     if (images.length > 0) setIsLoading(false)
   }, [images])
   
-  return <p>Board</p>;
+  return <div>{isLoading && <Loader />}</div>;
 };
 
 export default Board;
