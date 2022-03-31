@@ -24,3 +24,11 @@ const Board = ({gameOptions}) => {
 };
 
 export default Board;
+
+Board.propTypes = {
+  gameOptions: PropTypes.shape({
+    pace: PropTypes.string.isRequired,
+    cardsCount:PropTypes.number.isRequired,
+    category:PropTypes.string.isRequired
+  })
+}
