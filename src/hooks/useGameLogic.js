@@ -1,15 +1,21 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-
 import { useEffect } from "react";
+import { addUniqueIds, getFormedData, getPairedPics } from "../utils";
 
 const useGameLogic = (images) => {
 
+  console.log('images-----', {images});
+
   const prepareCards = () => {
-    console.log('images-----', {images});
+    const a = getFormedData(images);
+    // b duplicates images from a
+    const b = getPairedPics(a);
+    const c = addUniqueIds(b);
+
   };
   
   useEffect(() => {
-    if (images.length > 0) prepareCards()
+    if (images.length > 0) prepareCards();
   }, [images])
 };
 
