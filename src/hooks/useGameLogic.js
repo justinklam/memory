@@ -1,7 +1,16 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 
+import { useEffect } from "react";
+
 const useGameLogic = (images) => {
-  console.log('images-----', images)
+
+  const prepareCards = () => {
+    console.log('images-----', {images});
+  };
+  
+  useEffect(() => {
+    if (images.length > 0) prepareCards()
+  }, [images])
 };
 
 export default useGameLogic;
