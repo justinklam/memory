@@ -1,10 +1,9 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { addUniqueIds, getFormedData, getPairedPics, shuffleCards } from "../utils";
 
 const useGameLogic = (images) => {
-
-  console.log('images-----', {images});
+  const [cards, setCards]= useState([])
 
   const prepareCards = () => {
     const a = getFormedData(images);
@@ -12,11 +11,14 @@ const useGameLogic = (images) => {
     const b = getPairedPics(a);
     const c = addUniqueIds(b);
     const d = shuffleCards(c);
+    setCards(d);
   };
   
   useEffect(() => {
     if (images.length > 0) prepareCards();
-  }, [images])
+  }, [images]);
+
+  return cards;
 };
 
 export default useGameLogic;
