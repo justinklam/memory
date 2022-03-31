@@ -24,8 +24,8 @@ const Board = ({gameOptions}) => {
   
   return (
     <div>
-      {isLoading && <Loader />}
-      {!isLoading && cards.map(card => <Card key={card.uniqueId} card={card} />)}
+      {isLoading ? <Loader /> :
+      cards.map(card => <Card key={card.uniqueId} card={card} />)}
     </div>
   );
 };
