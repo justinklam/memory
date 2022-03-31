@@ -5,6 +5,7 @@ import Loader from './../Loader';
 
 // hook
 import useGetImages from '../../hooks/useGetImages';
+import useGameLogic from '../../hooks/useGameLogic';
 
 // style
 import styles from './Board.module.css';
@@ -14,6 +15,8 @@ const Board = ({gameOptions}) => {
 
   const images = useGetImages(gameOptions);
   console.log({images});
+
+  const cards = useGameLogic(images);
 
   // runs whenever we receive images
   useEffect(() => {
