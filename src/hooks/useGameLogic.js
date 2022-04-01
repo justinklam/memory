@@ -14,8 +14,8 @@ const useGameLogic = (images) => {
     setCards(d);
   };
 
-  const onCardClick = (e) => {
-    console.log('e', e);
+  const onCardClick = (uniqueId) => {
+    console.log('uniqueId', uniqueId);
   }
   
   useEffect(() => {

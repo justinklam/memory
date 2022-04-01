@@ -25,7 +25,7 @@ const Board = ({gameOptions}) => {
   return (
     <div>
       {isLoading ? <Loader /> :
-      cards.map(card => <Card key={card.uniqueId} card={card} onclick={onCardClick} />)}
+      cards.map(card => <Card key={card.uniqueId} card={card} onCardClick={onCardClick} />)}
     </div>
   );
 };
