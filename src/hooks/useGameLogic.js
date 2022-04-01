@@ -13,12 +13,16 @@ const useGameLogic = (images) => {
     const d = shuffleCards(c);
     setCards(d);
   };
+
+  const onCardClick = (e) => {
+    console.log('e', e);
+  }
   
   useEffect(() => {
     if (images.length > 0) prepareCards();
   }, [images]);
 
-  return cards;
+  return {cards, onCardClick};
 };
 
 export default useGameLogic;

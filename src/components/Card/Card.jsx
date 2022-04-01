@@ -7,9 +7,9 @@ import Image from './../Image';
 // style
 import styles from './Card.module.css';
 
-const Card = ({card}) => {
+const Card = ({card, onClick}) => {
     return (
-      <div className={`${styles.container}`}>
+      <div className={`${styles.container}`} onClick={onClick}>
       <div className={`${styles.card}`}>
           <div className={`${styles.front}`}></div>
           <div className={`${styles.back}`}></div>

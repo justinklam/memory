@@ -14,7 +14,7 @@ import styles from './Board.module.css';
 const Board = ({gameOptions}) => {
   const [isLoading, setIsLoading] = useState(true);
   const images = useGetImages(gameOptions);
-  const cards = useGameLogic(images);
+  const {cards, onCardClick} = useGameLogic(images);
   
   // console.log({images});
   // runs whenever we receive images
@@ -25,7 +25,7 @@ const Board = ({gameOptions}) => {
   return (
     <div>
       {isLoading ? <Loader /> :
-      cards.map(card => <Card key={card.uniqueId} card={card} />)}
+      cards.map(card => <Card key={card.uniqueId} card={card} onclick={onCardClick} />)}
     </div>
   );
 };
