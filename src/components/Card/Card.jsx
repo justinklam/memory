@@ -13,7 +13,7 @@ const Card = ({card}) => {
       <div className={`${styles.card}`}>
           <div className={`${styles.front}`}></div>
           <div className={`${styles.back}`}></div>
-            <Image />
+            <Image url={card.url}/>
         </div>
       </div>
     )
