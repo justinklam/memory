@@ -14,9 +14,20 @@ const useGameLogic = (images) => {
     setCards(d);
   };
 
-  const onCardClick = (uniqueId) => {
-    console.log('uniqueId', uniqueId);
-  }
+  const flipCard = (clickedCardId) => {
+    const flippedCards = cards.map(card => {
+      if (card.uniqueId === clickedCardId) {
+        card.isShown = true
+      }
+      return card;
+    });
+    setCards(flippedCards);
+  };
+
+  const onCardClick = (clickedCardId) => {
+    console.log({clickedCardId});
+    flipCard(clickedCardId);
+  };
   
   useEffect(() => {
     if (images.length > 0) prepareCards();
