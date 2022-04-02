@@ -14,7 +14,7 @@ import styles from './Board.module.css';
 const Board = ({gameOptions}) => {
   const [isLoading, setIsLoading] = useState(true);
   const images = useGetImages(gameOptions);
-  const {cards, onCardClick} = useGameLogic(images);
+  const {cards, onCardClick} = useGameLogic(images, gameOptions.pace);
   
   // console.log({images});
   // runs whenever we receive images
