@@ -38,4 +38,4 @@ Board.propTypes = {
     cardsCount:PropTypes.number.isRequired,
     category:PropTypes.string.isRequired
   })
-}
+};

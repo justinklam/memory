@@ -41,6 +41,22 @@ const useGameLogic = (images) => {
     if (images.length > 0) prepareCards();
   }, [images]);
 
+  useEffect(() => {
+    if (visibleCards.length >= MAX_VISIBLE_CARDS) {
+      const updatedCards = cards.map(card => {
+        if (visibleCards.indexOf(card.uniqueId) !== -1) {
+          card.isShown = false;
+        }
+        return card;
+      })
+      
+      setTimeout(() => {
+        setCards(updatedCards);
+        setVisibleCards([]);
+      }, 1000);
+    }
+  }, [visibleCards])
+
   return {cards, onCardClick};
 };
 
