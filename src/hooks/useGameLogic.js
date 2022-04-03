@@ -25,6 +25,7 @@ const useGameLogic = (images, gamePace) => {
   };
 
   const flipCard = (clickedCardId) => {
+    console.log('flipCard', clickedCardId);
     const flippedCards = cards.map(card => {
       if (card.uniqueId === clickedCardId) {
         card.isShown = true;
@@ -43,6 +44,20 @@ const useGameLogic = (images, gamePace) => {
       console.log({clickedCardId});
     }
   };
+
+  const checkMatch = () => {
+    const updatedCards = cards.map(card => {
+      if (visibleCards.indexOf(card.uniqueId) !== -1) {
+        card.isShown = false;
+      }
+      return card;
+    })
+    
+    setTimeout(() => {
+      setCards(updatedCards);
+      setVisibleCards([]);
+    }, PACES[gamePace]);
+  };
   
   useEffect(() => {
     if (images.length > 0) prepareCards();
@@ -50,19 +65,9 @@ const useGameLogic = (images, gamePace) => {
 
   useEffect(() => {
     if (visibleCards.length >= MAX_VISIBLE_CARDS) {
-      const updatedCards = cards.map(card => {
-        if (visibleCards.indexOf(card.uniqueId) !== -1) {
-          card.isShown = false;
-        }
-        return card;
-      })
-      
-      setTimeout(() => {
-        setCards(updatedCards);
-        setVisibleCards([]);
-      }, PACES[gamePace]);
+      checkMatch()
     }
-  }, [visibleCards])
+  }, [visibleCards]);
 
   return {cards, onCardClick};
 };
