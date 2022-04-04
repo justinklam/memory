@@ -48,12 +48,14 @@ const Settings = ({startGame}) => {
                 key={item} 
                 name={item} 
                 selectedItem={pace}
-                onChange = {(e) => setPace(e.target.value)}
+                onChange = {e => setPace(e.target.value)}
               />
             ))}
           </div>
 
-          <button className={`${styles.button} frosted`} onClick={onStartClick}>Start</button>
+          <button className={`${styles.button} frosted`} onClick={onStartClick}>
+            Start
+          </button>
         </div>
     );
 };
