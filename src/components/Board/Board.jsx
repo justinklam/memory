@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 
 import Loader from './../Loader';
 import Card from './../Card';
+import Result from './../Result';
 
 // hook
 import useGetImages from '../../hooks/useGetImages';
@@ -14,7 +15,7 @@ import styles from './Board.module.css';
 const Board = ({gameOptions}) => {
   const [isLoading, setIsLoading] = useState(true);
   const images = useGetImages(gameOptions);
-  const {cards, onCardClick} = useGameLogic(images, gameOptions.pace);
+  const {cards, onCardClick, isWin} = useGameLogic(images, gameOptions.pace);
   
   // console.log({images});
   // runs whenever we receive images
@@ -24,6 +25,7 @@ const Board = ({gameOptions}) => {
   
   return (
     <div>
+      {isWin && <Result/> }
       {isLoading ? (<Loader />) : 
       (cards.map(card => <Card key={card.uniqueId} card={card} onCardClick={onCardClick} />))}
     </div>
