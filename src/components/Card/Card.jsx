@@ -34,5 +34,6 @@ Card.propTypes = {
     uniqueId: PropTypes.string.isRequired,
     isShown: PropTypes.bool.isRequired,
     isFound: PropTypes.bool.isRequired
-  })
+  }),
+  onCardClick: PropTypes.func.isRequired
 };
