@@ -13,6 +13,7 @@ const PACES = {
 
 const useGameLogic = (images, gamePace) => {
   const [score, setScore] = useState(0);
+  const [isWin, setIsWin] = useState(false);
   const [cards, setCards]= useState([]);
   const [visibleCards, setVisibleCards] = useState([]);
 
@@ -76,11 +77,18 @@ const useGameLogic = (images, gamePace) => {
 
   useEffect(() => {
     if (visibleCards.length >= MAX_VISIBLE_CARDS) {
-      checkMatch()
+      setIsWin(true);
     }
   }, [visibleCards]);
 
-  return {cards, onCardClick};
+  useEffect(() =>{
+    // if score length = images.length, means the user has won
+    if (images.length && score === images.length) {
+
+    }
+  }, [score]);
+
+  return {cards, onCardClick, isWin};
 };
 
 export default useGameLogic;
