@@ -11,3 +11,7 @@ const Result = ({restartGame}) => (
 );
 
 export default Result;
+
+Result.propTypes = {
+  restartGame: PropTypes.func.isRequired
+};
