@@ -15,13 +15,14 @@ const Card = ({card, onCardClick}) => {
 
   return (
     <div className={`${styles.container}`} onClick={onClick}>
-      <div className={`${styles.card} ${card.isShown ? styles.flipped: ''}`}>
-        <div className={`${styles.front}`}></div>
-        <div className={`${styles.back}`}></div>
-          <Image url={card.url}/>
-      </div>
+        <div className={`${styles.card} ${card.isShown ? styles.flipped : ''}`}>
+            <div className={`${styles.front} ${card.isFound ? styles.found : ''}`}></div>
+            <div className={`${styles.back}`}>
+                <Image url={card.url} />
+            </div>
+        </div>
     </div>
-  )
+  );
 };
 
 export default Card;

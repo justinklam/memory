@@ -25,7 +25,7 @@ const useGameLogic = (images, gamePace) => {
   };
 
   const flipCard = (clickedCardId) => {
-    console.log('flipCard', clickedCardId);
+    // console.log('flipCard', clickedCardId);
     const flippedCards = cards.map(card => {
       if (card.uniqueId === clickedCardId) {
         card.isShown = true;
@@ -41,7 +41,6 @@ const useGameLogic = (images, gamePace) => {
   const onCardClick = (clickedCardId) => {
     if (visibleCards.length < MAX_VISIBLE_CARDS) {
       flipCard(clickedCardId);
-      console.log({clickedCardId});
     }
   };
 

@@ -10,7 +10,7 @@ const RadioBox = ({name, selectedItem, onChange}) => {
         <input type="radio" name={name} id={name} value={name} checked={isChecked} onChange={onChange}/>
         <label htmlFor={name}>{name}</label>
       </div>
-    )
+    );
 };
 
 export default RadioBox;
