@@ -10,6 +10,7 @@ import styles from './Card.module.css';
 const Card = ({card, onCardClick}) => {
 
   const onClick = () => {
+    if (card.isShown || card.isFound) return;
     onCardClick(card.uniqueId);
   }; 
 
