@@ -45,9 +45,16 @@ const useGameLogic = (images, gamePace) => {
   };
 
   const checkMatch = () => {
+    // visible returns an array of 2 id's
+    const visible = cards.filter(card => visibleCards.indexOf(card.uniqueId) !== -1)
+
+    // check if visible return array matches
+    const matched = visible[0].id === visible[1].id;
+
     const updatedCards = cards.map(card => {
       if (visibleCards.indexOf(card.uniqueId) !== -1) {
         card.isShown = false;
+        card.isFound = matched;
       }
       return card;
     })
