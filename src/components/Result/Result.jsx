@@ -3,6 +3,11 @@ import PropTypes from 'prop-types';
 
 import styles from './Result.module.css';
 
-const Result = () => <p>Result</p>;
+const Result = ({restartGame}) => (
+  <div className={`${styles.container} frosted`}>
+    <p>You Win!</p>
+    <button className={`${styles.button} frosted`} onClick={restartGame}>Restart Game</button>
+  </div>
+);
 
 export default Result;
