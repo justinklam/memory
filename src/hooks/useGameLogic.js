@@ -77,14 +77,14 @@ const useGameLogic = (images, gamePace) => {
 
   useEffect(() => {
     if (visibleCards.length >= MAX_VISIBLE_CARDS) {
-      setIsWin(true);
+      checkMatch();
     }
   }, [visibleCards]);
 
   useEffect(() =>{
     // if score length = images.length, means the user has won
     if (images.length && score === images.length) {
-
+      setIsWin(true);
     }
   }, [score]);
 
