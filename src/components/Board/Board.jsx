@@ -26,8 +26,14 @@ const Board = ({gameOptions, restartGame}) => {
   return (
     <div>
       {isWin && <Result restartGame={restartGame}/> }
-      {isLoading ? (<Loader />) : 
-      (cards.map(card => <Card key={card.uniqueId} card={card} onCardClick={onCardClick} />))}
+      {isLoading ? (<Loader />
+      ) : (
+      <div className={`${styles.board}`}>
+          {cards.map(card => (
+              <Card key={card.uniqueId} card={card} onCardClick={onCardClick} />
+          ))}
+      </div>
+      )}
     </div>
   );
 };
