@@ -13,12 +13,16 @@ function App() {
     console.log({options});
   };
 
+  const restartGame = () => {
+    setGameOptions(null);
+  };
+
   return (
     <>
       <Background />
       <h1>Memory Game</h1>
       {/* if there are no game options, render Settings else render Board */}
-      {!gameOptions ? <Settings startGame={startGame}/> : <Board gameOptions={gameOptions}/>}
+      {!gameOptions ? <Settings startGame={startGame}/> : <Board gameOptions={gameOptions} restartGame={restartGame}/>}
     </>
   );
 };
