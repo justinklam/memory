@@ -20,7 +20,7 @@ function App() {
   return (
     <>
       <Background />
-      <h1>Memory Game</h1>
+      <h1>Memory</h1>
       {/* if there are no game options, render Settings else render Board */}
       {!gameOptions ? <Settings startGame={startGame}/> : <Board gameOptions={gameOptions} restartGame={restartGame}/>}
     </>
