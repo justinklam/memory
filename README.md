@@ -5,6 +5,15 @@
 <p>Test your image recognition with the <b>Memory Game!</b></p>
 <p>This game was made to practice React and API calls.</p>
 
+## Preview
+
+<p>Game Board</p>
+<img src="./public/screenshots/Board.png" height="500" style="border-radius:10px;margin-bottom:1rem;" />
+<p>Main-Settings</p>
+<img src="./public/screenshots/Main-Settings.png" height="500" style="border-radius:10px;margin-bottom:1rem;" />
+<p>Reset</p>
+<img src="./public/screenshots/Reset.png" height="500" style="border-radius:10px;margin-bottom:1rem;" />
+
 ### Tech stack
 
 ```
